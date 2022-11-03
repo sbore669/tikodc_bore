@@ -41,8 +41,8 @@ class UserProfilepage extends StatelessWidget {
             ),
 
             // username
-            Padding(
-              padding: const EdgeInsets.all(20.0),
+            const Padding(
+              padding: EdgeInsets.all(20.0),
               child: Text(
                 '@Tik_ODK',
                 style: TextStyle(color: Colors.black, fontSize: 20),
@@ -57,7 +57,7 @@ class UserProfilepage extends StatelessWidget {
                   child: Container(
                     alignment: Alignment.centerRight,
                     child: Column(
-                      children: [
+                      children: const [
                         Text(
                           '37',
                           style: TextStyle(

@@ -26,7 +26,8 @@ import 'dart:math' as math;
 //   }
 // }
 class UserAcceuilpage extends StatelessWidget {
-  final _controller = PageController(initialPage: 0);
+  UserAcceuilpage({Key? key}) : super(key: key);
+  //final _controller = PageController(initialPage: 0);
   final List<Map> tikelement = [
     {
       "video": "assets/videos/video_1.mp4",
@@ -69,7 +70,7 @@ class UserAcceuilpage extends StatelessWidget {
 }
 
 class VideoWidget extends StatefulWidget {
-  const VideoWidget({super.key, required this.videoUrl});
+  const VideoWidget({Key? key, required this.videoUrl}) : super(key: key);
   final String videoUrl;
 
   @override
@@ -81,12 +82,13 @@ class _VideoWidgetState extends State<VideoWidget> {
   final String videoUrl;
   _VideoWidgetState(this.videoUrl);
 
+  @override
   void initState() {
     super.initState();
     _controller = VideoPlayerController.asset(videoUrl)
       ..initialize().then((_) {
-        _controller.setLooping(true);
-        _controller.play;
+        _controller.setLooping(false);
+        _controller.play();
         setState(() {});
       });
   }
@@ -172,13 +174,13 @@ class Postcontent extends StatelessWidget {
                     ]),
               ),
             ),
-            Container(
+            SizedBox(
               width: 80,
               // color: Colors.green,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Container(
+                  SizedBox(
                     height: 80,
                     // color: Colors.blue,
                     child: Stack(
@@ -198,10 +200,14 @@ class Postcontent extends StatelessWidget {
                             color: Colors.red,
                             borderRadius: BorderRadius.circular(20),
                           ),
-                          child: Icon(Icons.add, color: Colors.white, size: 15),
+                          child: const Icon(Icons.add,
+                              color: Colors.white, size: 15),
                         )
                       ],
                     ),
+                  ),
+                  const SizedBox(
+                    height: 10,
                   ),
                   SizedBox(
                     height: 80,

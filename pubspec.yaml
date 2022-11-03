@@ -38,6 +38,20 @@ dependencies:
   cupertino_icons: ^1.0.2
   carousel_slider: ^4.1.1
   video_player: ^2.4.7
+  font_awesome_flutter: ^10.2.1
+  flutter_native_splash: ^2.2.13
+
+
+
+flutter_native_splash:
+ color: '#000000'
+ image: assets/images/imgl.png
+
+ android_12:
+    icon_backgroung_color: "#000000"
+    image: assets/images/imgl.png
+
+
 
 dev_dependencies:
   flutter_test:
